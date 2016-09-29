@@ -1,0 +1,557 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,800|Oswald:300|Raleway:300,900';
+
+@import "./components/_variables.scss";
+@import "./components/_animation.scss";
+@import "./components/_presets.scss";
+@import "./components/_main.scss";
+
+.senai-logo{
+	background: url(../imgs/senailogo.svg) no-repeat center;
+	text-indent: -9999999px;
+	height: 37px;
+}
+
+#primaryNav{
+	.container{
+		> .senai-logo{
+			display: block;
+			margin: auto;
+			margin-bottom: 0px;
+			text-align: center;
+			transition: all 1s 0.3s cubic-bezier(0.19,1,0.22,1);
+			a{
+				display: block;
+				width: 200px;
+			}
+		}
+		position: relative;
+		> h2{
+			white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+			opacity: 0;
+			font-size: 28px;
+			position: absolute;
+			top:0px;
+			left: 50%;
+			transform: translateX(-50%) translateX(32px);
+			margin: 0px;
+			transition: all 1s 0.3s cubic-bezier(0.19,1,0.22,1);
+		}
+	}
+	padding: 10px 0px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+	z-index: 20;
+	box-shadow: 0px 0px 55px -3px rgba(0,0,0,0.1);
+	transition: all 0.5s cubic-bezier(0.19,1,0.22,1);
+	background: white;
+	opacity: 0;
+	position: fixed;
+	&.active{
+		.container h2{
+			opacity: 1;
+			max-width: calc(100vw - 550px);
+		}
+		.senai-logo{
+			background-position: left;
+		}
+		opacity: 1;
+		top: 0px;
+		.btn{
+			border: solid 3px $green;
+		    padding: 8px 15px;
+		    opacity: 1;
+		    font-size: 12px;
+			visibility: visible;
+			transition: 
+				right 1s 0.3s cubic-bezier(0.19,1,0.22,1),
+				opacity 1s 0.3s cubic-bezier(0.19,1,0.22,1),
+				transform 1s 0.3s cubic-bezier(0.19,1,0.22,1),
+				background-color 0.5s cubic-bezier(0.19,1,0.22,1),
+				color 0.5s cubic-bezier(0.19,1,0.22,1);
+			right: 15px;
+			transform: none;
+			&:hover{
+				background-color: $green;
+				color: $black;
+			}
+		}
+	}
+	.btn{
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		right: 50%;
+		transform: translateX(50%);
+		top: 0px;
+	}
+}
+
+#petinder{
+    > .container{
+        width: 100%;
+        position: relative;
+        height: 60vh;
+    }
+    img{
+        position: absolute;
+        left: 0px;
+        width: 35vw;
+        top: 25px;
+    }
+    .text{
+        position: absolute;
+        top: 50%;
+        left: 35vw;
+        transform: translateY(-50%);
+        width: 35%;
+        min-width: 640px;
+        margin-left: 70px;
+        max-width: 840px;
+        h3{
+            margin-top: 0px;
+            font-size: 67px;
+            font-weight: lighter;
+            &:after{
+                width: 100px;
+                margin-left: 0px;
+                margin-top: 50px;
+                background: $green;
+            }
+        }
+        p{
+            font-size: 27px;
+        }
+    }
+    position: relative;
+}
+
+#map{
+	.gm-style-iw{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 10px;
+		h3{
+			display: block;
+			margin: 0px;
+			font-size: 34px;
+			text-align: center;
+			&::after{
+				margin-top: 10px;
+			}
+			*{
+				display: block;
+				line-height: 35px;
+			}
+			margin-bottom: 10px;
+		}
+		h4{
+			margin-bottom: 0px;
+		}
+		p{
+			margin-top: 0px;
+			margin-bottom: 10px;
+		}
+		.grid.three > *{
+			margin-bottom: 0px;
+		}
+	}
+	height: 720px;
+
+}
+
+#vamosAprender{
+    .container{
+        > h3{
+            text-align: center;
+            font-weight: lighter;
+        }
+        > ul{
+            li{
+                display: flex;
+                align-items: center;
+                > p{
+                    font-size: 24px;
+                    margin: 0px;
+                }
+                img{
+                    width: 70px;
+                    display: block;
+                    margin-right: 20px;
+                }
+            }  
+        }
+    }
+}
+
+#professor{
+    background: white;
+    .container{
+        > img{
+            height: 400px;
+            display: block;
+            width: 400px;
+            float: left;
+            margin-right: 40px;
+        }
+        small,
+        h3{
+            font-family: "Raleway",sans-serif;
+        }
+        small{
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        h3{
+            margin-top: 0px;
+            display: block;
+            font-size: 53px;
+            margin-bottom: 20px;
+            &::after{
+                content: none;
+            }
+        }
+    }
+}
+
+#programacao{
+    h3{
+        text-align: center;
+    }
+    background: darken($black,10%);
+    *{
+        color: white;
+    }
+    .accordion{ 
+        strong{
+            color: $green;
+        }
+        h4{
+            font-size: 40px;
+            font-weight: lighter;
+            margin: 0px;
+        }
+        .content{
+        	*{
+    			color: $black;
+    		}
+        }
+    }
+}
+
+#quando{
+    .container{
+        > h3{
+            text-align: center;
+        }
+    }
+    margin-bottom: 0px;
+}
+
+#valor{
+    .text{
+    	flex-wrap: wrap;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        small{
+            font-family: "Oswald", sans-serif;
+            font-size: 63px;
+            margin-right: 20px;
+        }
+        p{
+            *{
+                display: block;
+            }
+            strong{
+                color: darken($green,10%);
+                font-size: 40px;
+                line-height: 38px;
+            }
+        }
+        p:last-child{
+        	width: 100%;
+        	text-align: center;
+        	display: block;
+        	margin-top: 0px;
+        }
+    }
+    padding: 30px 0px;
+}
+
+footer{
+    background: $black;
+    *{
+        color: white;
+    }
+    .container{
+        padding: 20px 0px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 1200px){
+	.container{
+		width: 960px;
+	}
+	.grid.three{
+		> *{
+			flex: 0 0 48%;
+			flex: 0 0 calc(50% - 20px);
+		}
+	}
+	#petinder{
+		.text{
+			min-width: auto;
+			width: auto;
+		}
+	}
+}
+
+@media(max-width: 960px){
+	.container,
+	#petinder > .container {
+    	width: 840px;
+    	height: auto;
+    	> img{
+    		display: none;
+    	}
+    	> .text{
+    		position: static;
+		    top: auto;
+		    left: auto;
+		    transform: none;
+		    width: 100%;
+		    min-width: auto;
+		    margin-left: auto;
+		    max-width: auto;
+		    h3{
+		    	text-align: center;
+		    	&::after{
+			    	margin-left: auto;
+			    	margin-right: auto;
+			    }
+		    }
+    	}
+    }
+    h3{
+    	font-size: 50px;
+    }
+
+    body > main{
+    	#resumeInfo ul > li span {
+	    	font-size: 31px;
+    	}
+    	.box{
+	    	width: 80%;
+			h2 {
+			    max-width: 100%;
+			    width: 100%;
+			    font-size: 70px;
+			}
+	    }
+	}
+
+    #programacao .accordion h4{
+    	font-size: 32px;
+    }
+
+    
+    .agenda table {
+    	max-width: 100%;
+    	td,th{
+		    width: 40px;
+		    height: 40px;
+    	}
+    	td{
+			color: rgba(0,0,0,0.5);
+	    }
+	}
+}
+
+
+@media(max-width: 840px){
+	.container,
+	#petinder > .container {
+    	width: 640px;
+    }
+    
+    body > main #resumeInfo ul > li{
+    	img{
+			height: 40px;
+    	}
+		span{
+	    	font-size: 27px;
+		}
+	}
+
+	#petinder .text {
+		h3{
+			font-size: 49px;
+		}
+		p{
+		    text-align: center;
+		}
+	}
+
+	#professor .container > img{
+		width: 100%;
+		margin: none;
+		float: none;
+		height: 260px;
+	}
+	body > main .box {
+	    width: 100%;
+	    padding: 0px 20px;
+	}
+	#map{
+    	.grid.three {
+			flex-direction: column;
+	    	> *{
+				display: block;
+				flex: 1 1 100%;
+				width: 100%;
+				max-width: 200px;
+	    	}
+    	}
+    }
+
+}
+
+@media(max-width: 735px){
+	body > main .box h2{
+		font-size: 52px;
+		line-height: 55px;
+	}
+}
+@media(max-width: 640px){
+	#petinder .text p,
+	p{
+		font-size: 16px;
+	}
+	body > main{
+		min-height: 600px;
+		.box{
+			h2{
+				font-size: 32px;
+		    	line-height: 32px;
+		    	img {
+				    height: 32px;
+				    width: 32px;
+				}
+
+			}
+			> strong{
+				font-size: 18px;
+			}
+			.faltam{
+				strong{
+					font-size: 34px;
+				}
+				margin-bottom: 20px;
+			}
+			.inscricao{
+				strong{
+					font-size: 15px;
+				}
+			}
+			.senai-logo{
+				margin-bottom: 15px;
+			}
+		}
+	}
+	h3{
+		font-size: 29px;
+	}
+	h3:after{
+		height: 8px;
+	}
+
+	
+	.grid.three{
+		> *{
+			flex: 0 0 100%;
+		}
+	}
+	.container,
+	#petinder > .container {
+    	width: 100%;
+    	.text h3{
+			font-size: 29px;
+			&:after{
+				margin-top: 20px;
+			}
+    	}
+    }
+
+    body > main #resumeInfo ul{
+    	padding-top: 20px;
+    	width: 100%;
+    	flex-direction: row;
+    	flex-wrap: wrap;
+    	align-items: center;
+    	justify-content: center;
+    	height: auto;
+    	li{
+    		flex: 0 1 100%;
+    		margin-bottom: 20px;
+    		justify-content: center;
+    	}
+    }
+
+    #vamosAprender{
+    	.container{
+	    	ul{
+	    		width: 400px;
+	    		max-width: 100%;
+	    		margin: auto;
+	    		padding: 0px 20px;
+	    		li{
+	    			img{
+	    				width: 40px;
+	    			}
+	    			margin-bottom: 30px;
+	    			p{
+	    				font-size: 18px;
+	    			}
+	    			border-bottom: solid 1px rgba(0,0,0,0.1);
+				    margin: 0px;
+				    padding: 20px 0px;
+				    &:last-child{
+				    	border-bottom: none;
+				    }
+	    		}
+	    	}
+    	}
+    }
+    #programacao .accordion{
+    	header{
+    		&::after,
+    		&::before{
+				right: 10px;
+    			top: 20px;
+    			width: 15px;
+    		}
+    		flex-wrap: wrap;
+    		flex-direction: row;
+	    	> *{
+	    		flex: 1 1 100%;
+	    	}
+	    	padding: 10px 20px;
+	    }
+    	strong{
+    		font-size: 14px;
+    	}
+    	h4{
+    		font-size: 18px;
+    	}
+
+    }
+
+    
+   
+}

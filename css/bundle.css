@@ -470,6 +470,11 @@ body > main {
     text-align: center; }
   #programacao * {
     color: white; }
+  #programacao .accordion ul {
+    padding: 0px;
+    list-style-type: circle;
+    padding-left: 15px;
+    margin-bottom: 10px; }
   #programacao .accordion strong {
     color: #a3f700; }
   #programacao .accordion h4 {
@@ -506,6 +511,13 @@ body > main {
       text-align: center;
       display: block;
       margin-top: 0px; }
+  #valor .container .text > img {
+    display: block; }
+  #valor .container > img {
+    height: 40px;
+    display: block;
+    margin: auto;
+    margin-top: 30px; }
 
 footer {
   background: #404D4E; }
@@ -532,26 +544,23 @@ footer {
   #petinder > .container {
     width: 840px;
     height: auto; }
-    .container > img,
-    #petinder > .container > img {
-      display: none; }
-    .container > .text,
-    #petinder > .container > .text {
-      position: static;
-      top: auto;
-      left: auto;
-      transform: none;
-      width: 100%;
-      min-width: auto;
-      margin-left: auto;
-      max-width: auto; }
-      .container > .text h3,
-      #petinder > .container > .text h3 {
-        text-align: center; }
-        .container > .text h3::after,
-        #petinder > .container > .text h3::after {
-          margin-left: auto;
-          margin-right: auto; }
+
+  #petinder > .container > img {
+    display: none; }
+  #petinder > .container > .text {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    min-width: auto;
+    margin-left: auto;
+    max-width: auto; }
+    #petinder > .container > .text h3 {
+      text-align: center; }
+      #petinder > .container > .text h3::after {
+        margin-left: auto;
+        margin-right: auto; }
 
   h3 {
     font-size: 50px; }
@@ -617,7 +626,7 @@ footer {
     font-size: 16px; }
 
   body > main {
-    min-height: 600px; }
+    min-height: 670px; }
     body > main .box h2 {
       font-size: 32px;
       line-height: 32px; }
@@ -630,8 +639,10 @@ footer {
       margin-bottom: 20px; }
       body > main .box .faltam strong {
         font-size: 34px; }
-    body > main .box .inscricao strong {
-      font-size: 15px; }
+    body > main .box .inscricao {
+      margin-bottom: 30px; }
+      body > main .box .inscricao strong {
+        font-size: 15px; }
     body > main .box .senai-logo {
       margin-bottom: 15px; }
 

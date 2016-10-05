@@ -187,14 +187,21 @@
 }
 
 #professor{
+	overflow: hidden;
+	padding-top: 0px;
+	padding-bottom: 0px;
     background: white;
     .container{
+    	> *{
+			flex: 1;
+    	}
         > img{
-            height: 400px;
+        	flex: 0 0 600px;
             display: block;
             width: 400px;
-            float: left;
-            margin-right: 40px;
+            margin-left: -100px;
+            align-self:stretch;
+            object-fit: cover;
         }
         small,
         h3{
@@ -213,6 +220,15 @@
             &::after{
                 content: none;
             }
+        }
+        display: flex;
+        .text{
+        	border: solid 10px rgba(163, 247, 0,0.8);
+        	margin-left: -60px;
+		    margin-top: 40px;
+		    margin-bottom: 40px;
+		    padding: 40px;
+		    padding-left: 100px;
         }
     }
 }
@@ -258,45 +274,45 @@
 }
 
 #valor{
-    .text{
-    	flex-wrap: wrap;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        small{
-            font-family: "Oswald", sans-serif;
-            font-size: 63px;
-            margin-right: 20px;
-        }
-        p{
-            *{
-                display: block;
-            }
-            strong{
-                color: darken($green,10%);
-                font-size: 40px;
-                line-height: 38px;
-            }
-        }
-        p:last-child{
-        	width: 100%;
-        	text-align: center;
-        	display: block;
-        	margin-top: 0px;
-        }
-    }
-    .container{
-    	.text > img{
-    		display: block;
-    	}
-	    > img{
-			height: 40px;
-			display: block;
-			margin: auto;
-			margin-top: 30px;
+	h3{
+		text-align: center;
+		display: block;
+		margin-bottom: 20px;
+		&::after{
+			content: none;
 		}
-    }
-    padding: 30px 0px;
+	}
+   .valores{
+   		display: flex;
+   		flex-direction: row;
+   		justify-content: center;
+   		> .valor{
+   			border: solid 3px $black;
+   			margin-right: 30px;
+   			padding: 30px;
+   			&:last-child{
+   				margin-right: 0px;
+   			}
+   			h4{
+   				&::after{
+   					content: none;
+   				}
+   				font-size: 34px;
+   				font-weight: bold;
+   				text-align: center;
+   				margin-bottom: 0px;
+   			}
+   			p{
+   				margin-top: 0px;
+   				text-align: center;
+   			}
+   			img{
+   				height: 40px;
+   				display: block;
+   				margin: auto;
+   			}
+   		}
+   }
 }
 
 footer{
@@ -372,6 +388,7 @@ footer{
 			    width: 100%;
 			    font-size: 70px;
 			}
+			
 	    }
 	}
 
@@ -417,11 +434,23 @@ footer{
 		}
 	}
 
-	#professor .container > img{
-		width: 100%;
-		margin: none;
-		float: none;
-		height: 260px;
+	#professor .container{
+		flex-direction: column;
+		> img{
+			max-height: auto;
+			width: 100vw;
+			margin: none;
+			float: none;
+			height: 160px;
+			flex: 0 0 300px;
+			margin-left: 0px;
+		}
+		.text{
+			padding: 40px;
+			margin-left: 0px;
+			margin-top: -70px;
+    		padding-top: 100px;
+		}
 	}
 	body > main .box {
 	    width: 100%;
@@ -448,6 +477,7 @@ footer{
 	}
 }
 @media(max-width: 640px){
+
 	#petinder .text p,
 	p{
 		font-size: 16px;
@@ -477,7 +507,6 @@ footer{
 				strong{
 					font-size: 15px;
 				}
-				margin-bottom: 30px;
 			}
 			.senai-logo{
 				margin-bottom: 15px;
@@ -572,6 +601,15 @@ footer{
 
     }
 
-    
+    #valor{
+    	.valores{
+    		flex-direction: column;
+    		.valor{
+    			padding: 15px;
+    			margin-right: 0px;
+    			margin-bottom: 20px;
+    		}
+    	}
+    }
    
 }
